@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - Edu-GArD3n</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">
+                <img src="images/EduGarden_logo_transparent.png" alt="Edu-GArD3n Logo">
+            </a>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="#" class="active">About</a>
+                        <ul class="submenu">
+                            <li><a href="project.html">About the Project</a></li>
+                            <li><a href="partners.html">Project Partners</a></li>
+                            <li><a href="apply.html" class="active">Apply</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Member Area</a>
+                        <ul class="submenu">
+                            <li><a href="signup.html">Sign Up</a></li>
+                            <li><a href="login.html">Login</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Apply to Edu-GArD3n</h1>
+            <p class="page-subtitle">Join Our Community of Innovation and Sustainability</p>
+        </div>
+    </section>
+
+    <!-- Application Status Section -->
+    <section class="content-section white-bg">
+        <div class="container">
+            <div class="apply-status-box">
+                <div class="status-icon">
+                    <i class="fas fa-hourglass-half"></i>
+                </div>
+                <h2>Applications Will Open Soon</h2>
+                <p class="status-message">We are currently preparing for the upcoming application cycle. The Edu-GArD3n project offers exciting opportunities for students, researchers, and professionals interested in sustainable manufacturing and green technologies.</p>
+                <p class="status-message">Register your interest below to be among the first to know when applications open. We will notify you via email with all the necessary information and deadlines.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expression of Interest Form -->
+    <section class="content-section green-bg">
+        <div class="container">
+            <div class="form-container">
+                <h2>Expression of Interest</h2>
+                <p class="form-intro">Stay informed about upcoming opportunities. Fill out the form below and we'll notify you when applications open.</p>
+                
+                <form class="interest-form" id="interestForm">
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user"></i> Full Name *
+                        </label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i> Email Address *
+                        </label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="institution">
+                            <i class="fas fa-university"></i> Institution / Organization *
+                        </label>
+                        <input type="text" id="institution" name="institution" required placeholder="Enter your institution or organization">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">
+                            <i class="fas fa-briefcase"></i> Current Role
+                        </label>
+                        <select id="role" name="role">
+                            <option value="">Select your role (optional)</option>
+                            <option value="student">Student</option>
+                            <option value="researcher">Researcher</option>
+                            <option value="professor">Professor</option>
+                            <option value="professional">Industry Professional</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">
+                            <i class="fas fa-lightbulb"></i> Area of Interest
+                        </label>
+                        <textarea id="interest" name="interest" rows="4" placeholder="Tell us briefly about your interest in the project (optional)"></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <span>I agree to receive email notifications about Edu-GArD3n application opportunities and updates *</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i> Submit Expression of Interest
+                    </button>
+
+                    <p class="form-note">* Required fields</p>
+                </form>
+
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Thank You!</h3>
+                    <p>Your expression of interest has been received. We'll notify you when applications open.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="instagram"><img src="images/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="linkedin"><img src="images/linkedin_white.png" alt="LinkedIn"></a>
+                </div>
+                <div class="funded">
+                    <div class="eu-band">
+                        <img src="images/GA_DISCLAIMER_white.png" alt="EU Flag" class="eu-flag">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Edu‑GArD3n | All Rights Reserved | Developed by: <a href="https://www.linkedin.com/in/martinelli-marco/" target="_blank" rel="noopener noreferrer" class="developer-link">Marco Martinelli</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+            
+            // Auto-expand submenu containing active page when opening hamburger
+            if (nav.classList.contains('active')) {
+                const activeSubmenuItem = document.querySelector('.submenu a.active');
+                if (activeSubmenuItem) {
+                    const parentSubmenu = activeSubmenuItem.closest('.has-submenu');
+                    if (parentSubmenu) {
+                        parentSubmenu.classList.add('open');
+                    }
+                }
+            }
+        });
+
+        // Submenu toggle for mobile
+        document.querySelectorAll('.has-submenu > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const parent = link.parentElement;
+                    parent.classList.toggle('open');
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission
+        const form = document.getElementById('interestForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Here you would normally send the form data to a server
+            // For now, we'll just show the success message
+            
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    </script>
+</body>
+</html>

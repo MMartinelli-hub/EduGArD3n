@@ -1,0 +1,11 @@
+{
+    "title": "News Test",
+    "category": "Announcements",
+    "publish_date": "2025-12-31",
+    "author": "John Lennon",
+    "image_url": "https:\/\/picsum.photos\/id\/1\/5000\/3333",
+    "summary": "summary",
+    "content_markdown": "content",
+    "created_at": "2025-12-29 15:20:05",
+    "slug": "news-test-128e84"
+}

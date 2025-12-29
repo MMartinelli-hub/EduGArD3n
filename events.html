@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Edu-GArD3n</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">
+                <img src="images/EduGarden_logo_transparent.png" alt="Edu-GArD3n Logo">
+            </a>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="#">About</a>
+                        <ul class="submenu">
+                            <li><a href="project.html">About the Project</a></li>
+                            <li><a href="partners.html">Project Partners</a></li>
+                            <li><a href="apply.html">Apply</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="events.html" class="active">Events</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Member Area</a>
+                        <ul class="submenu">
+                            <li><a href="signup.html">Sign Up</a></li>
+                            <li><a href="login.html">Login</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Upcoming Events</h1>
+            <p class="page-subtitle">Join us for workshops, conferences, and networking opportunities</p>
+        </div>
+    </section>
+
+    <!-- Events Grid Section -->
+    <section class="content-section white-bg">
+        <div class="container">
+            <div class="events-grid">
+                
+                <!-- Event: Educational Innovation Conference -->
+                <article class="event-card" data-event="educational-innovation-ghi789">
+                    <div class="event-image ">
+                                                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&amp;h=400&amp;fit=crop" alt="Educational Innovation Conference">
+                                                <div class="event-date-badge">
+                            <span class="badge-day">10</span>
+                            <span class="badge-month">May</span>
+                            <span class="badge-year">2027</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Educational Innovation Conference</h3>
+                        <div class="event-meta">
+                            <span class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Barcelona, Spain                            </span>
+                            <span class="event-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                May 10, 2027                            </span>
+                            <span class="event-time">
+                                <i class="fas fa-clock"></i>
+                                09:30 - 18:00                            </span>
+                        </div>
+                        <p class="event-description">International conference exploring innovative teaching methodologies in engineering education, with focus on sustainability and digital transformation in higher education.</p>
+                        <a href="event-detail.html?event=educational-innovation-ghi789" class="event-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Event: Evento Test -->
+                <article class="event-card" data-event="evento-test-272bdd">
+                    <div class="event-image ">
+                                                <img src="images/Edu-GArD3n logo.png" alt="Evento Test">
+                                                <div class="event-date-badge">
+                            <span class="badge-day">06</span>
+                            <span class="badge-month">Jan</span>
+                            <span class="badge-year">2027</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Evento Test</h3>
+                        <div class="event-meta">
+                            <span class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Rovigo, Italy                            </span>
+                            <span class="event-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                January 6, 2027                            </span>
+                            <span class="event-time">
+                                <i class="fas fa-clock"></i>
+                                09:00-17:00                            </span>
+                        </div>
+                        <p class="event-description">Short description</p>
+                        <a href="event-detail.html?event=evento-test-272bdd" class="event-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Event: Final Project Conference -->
+                <article class="event-card" data-event="final-conference-pqr678">
+                    <div class="event-image ">
+                                                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&amp;h=400&amp;fit=crop" alt="Final Project Conference">
+                                                <div class="event-date-badge">
+                            <span class="badge-day">20</span>
+                            <span class="badge-month">Sep</span>
+                            <span class="badge-year">2026</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Final Project Conference</h3>
+                        <div class="event-meta">
+                            <span class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Brussels, Belgium                            </span>
+                            <span class="event-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                September 20, 2026                            </span>
+                            <span class="event-time">
+                                <i class="fas fa-clock"></i>
+                                09:00 - 18:00                            </span>
+                        </div>
+                        <p class="event-description">Project closing conference presenting results, outcomes, and best practices. Network with European partners and discuss future collaboration opportunities in sustainable manufacturing education.</p>
+                        <a href="event-detail.html?event=final-conference-pqr678" class="event-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Event: Intensive Summer School Program -->
+                <article class="event-card" data-event="summer-school-mno345">
+                    <div class="event-image ">
+                                                <img src="https://picsum.photos/id/17/2500/1667" alt="Intensive Summer School Program">
+                                                <div class="event-date-badge">
+                            <span class="badge-day">05</span>
+                            <span class="badge-month">Jul</span>
+                            <span class="badge-year">2026</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Intensive Summer School Program</h3>
+                        <div class="event-meta">
+                            <span class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Padova, Italy                            </span>
+                            <span class="event-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                July 5, 2026                            </span>
+                            <span class="event-time">
+                                <i class="fas fa-clock"></i>
+                                5-Day Program                            </span>
+                        </div>
+                        <p class="event-description">Week-long intensive program covering green additive manufacturing, sustainability principles, and hands-on projects. Open to students and professionals from all partner institutions.</p>
+                        <a href="event-detail.html?event=summer-school-mno345" class="event-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Event: Student Design Competition -->
+                <article class="event-card" data-event="student-competition-jkl012">
+                    <div class="event-image ">
+                                                <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?w=600&amp;h=400&amp;fit=crop" alt="Student Design Competition">
+                                                <div class="event-date-badge">
+                            <span class="badge-day">18</span>
+                            <span class="badge-month">Jun</span>
+                            <span class="badge-year">2026</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Student Design Competition</h3>
+                        <div class="event-meta">
+                            <span class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Istanbul, Turkey                            </span>
+                            <span class="event-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                June 18, 2026                            </span>
+                            <span class="event-time">
+                                <i class="fas fa-clock"></i>
+                                All Day Event                            </span>
+                        </div>
+                        <p class="event-description">Students showcase their sustainable additive manufacturing projects. Compete for prizes while demonstrating innovative solutions to real-world environmental challenges.</p>
+                        <a href="event-detail.html?event=student-competition-jkl012" class="event-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Event: Green Additive Manufacturing Workshop -->
+                <article class="event-card" data-event="green-am-workshop-def456">
+                    <div class="event-image ">
+                                                <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600&amp;h=400&amp;fit=crop" alt="Green Additive Manufacturing Workshop">
+                                                <div class="event-date-badge">
+                            <span class="badge-day">22</span>
+                            <span class="badge-month">Apr</span>
+                            <span class="badge-year">2026</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Green Additive Manufacturing Workshop</h3>
+                        <div class="event-meta">
+                            <span class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Padova, Italy                            </span>
+                            <span class="event-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                April 22, 2026                            </span>
+                            <span class="event-time">
+                                <i class="fas fa-clock"></i>
+                                10:00 - 16:00                            </span>
+                        </div>
+                        <p class="event-description">Hands-on workshop focusing on sustainable materials and eco-friendly 3D printing techniques. Participants will learn about biodegradable filaments and energy-efficient printing methods.</p>
+                        <a href="event-detail.html?event=green-am-workshop-def456" class="event-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Event: Project Kickoff Meeting -->
+                <article class="event-card" data-event="project-kickoff-meeting-abc123">
+                    <div class="event-image ">
+                                                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&amp;h=400&amp;fit=crop" alt="Project Kickoff Meeting">
+                                                <div class="event-date-badge">
+                            <span class="badge-day">15</span>
+                            <span class="badge-month">Mar</span>
+                            <span class="badge-year">2026</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Project Kickoff Meeting</h3>
+                        <div class="event-meta">
+                            <span class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Brno, Czech Republic                            </span>
+                            <span class="event-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                March 15, 2026                            </span>
+                            <span class="event-time">
+                                <i class="fas fa-clock"></i>
+                                09:00 - 17:00                            </span>
+                        </div>
+                        <p class="event-description">Join us for the official launch of the Edu-GArD3n project. Meet the consortium partners, learn about project objectives, and participate in planning workshops.</p>
+                        <a href="event-detail.html?event=project-kickoff-meeting-abc123" class="event-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Event: title -->
+                <article class="event-card" data-event="title-bb7dd9">
+                    <div class="event-image ">
+                                                <img src="events/images/title-bb7dd9.jpg" alt="title">
+                                                <div class="event-date-badge">
+                            <span class="badge-day">29</span>
+                            <span class="badge-month">Dec</span>
+                            <span class="badge-year">2025</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>title</h3>
+                        <div class="event-meta">
+                            <span class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Pd, it                            </span>
+                            <span class="event-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                December 29, 2025                            </span>
+                            <span class="event-time">
+                                <i class="fas fa-clock"></i>
+                                09:00-17:00                            </span>
+                        </div>
+                        <p class="event-description">jag</p>
+                        <a href="event-detail.html?event=title-bb7dd9" class="event-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="instagram"><img src="images/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="linkedin"><img src="images/linkedin_white.png" alt="LinkedIn"></a>
+                </div>
+                <div class="funded">
+                    <!-- EU funding band with flag
+                    <div class="eu-band">
+                        <img src="images/GA_DISCLAIMER_white.png" alt="EU Flag" class="eu-flag">
+                        <p class="eu-text">Funded by the European Union</p>
+                    </div>
+                    <p class="disclaimer">The information and views set out in this web‑site are those of the authors and do not necessarily reflect the official opinion of the European Union. Neither the European Union institutions and bodies nor any person acting on their behalf may be held responsible for the use which may be made of the information contained therein.</p>
+                    <p class="grant">Grant agreement: <em>XXXXXXX</em></p>
+                    -->
+                    <div class="eu-band">
+                        <img src="images/GA_DISCLAIMER_white.png" alt="EU Flag" class="eu-flag">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Edu‑GArD3n | All Rights Reserved | Developed by: <a href="https://www.linkedin.com/in/martinelli-marco/" target="_blank" rel="noopener noreferrer" class="developer-link">Marco Martinelli</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+            
+            // Auto-expand submenu containing active page when opening hamburger
+            if (nav.classList.contains('active')) {
+                const activeSubmenuItem = document.querySelector('.submenu a.active');
+                if (activeSubmenuItem) {
+                    const parentSubmenu = activeSubmenuItem.closest('.has-submenu');
+                    if (parentSubmenu) {
+                        parentSubmenu.classList.add('open');
+                    }
+                }
+            }
+        });
+
+        // Close menu when clicking a regular link (not submenu parent)
+        const navLinks = document.querySelectorAll('.nav-menu a:not(.has-submenu > a)');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+            });
+        });
+
+        // Allow submenu toggling on smaller screens
+        const submenus = document.querySelectorAll('.has-submenu > a');
+        submenus.forEach(link => {
+            link.addEventListener('click', e => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const parentLi = link.parentElement;
+                    const wasOpen = parentLi.classList.contains('open');
+                    
+                    // Close all other submenus
+                    document.querySelectorAll('.has-submenu.open').forEach(item => {
+                        if (item !== parentLi) {
+                            item.classList.remove('open');
+                        }
+                    });
+                    
+                    // Toggle current submenu
+                    parentLi.classList.toggle('open');
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

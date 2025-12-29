@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Edu-GArD3n</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .event-detail-hero {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+        .event-detail-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .event-detail-hero.hero-gradient {
+            background: linear-gradient(135deg, #0F6356 0%, #6BE188 100%);
+        }
+        .event-detail-hero.hero-gradient img {
+            display: none;
+        }
+        .event-detail-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+        .event-detail-info {
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            color: white;
+            padding: 0 2rem;
+        }
+        .event-detail-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .event-meta-detail {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+        }
+        .event-meta-detail > div {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .event-meta-detail i {
+            color: #6BE188;
+            font-size: 1.2rem;
+        }
+        .event-detail-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+        .event-detail-content h2 {
+            color: #0F6356;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .event-detail-content h3 {
+            color: #0F6356;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.4rem;
+        }
+        .event-detail-content p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .event-detail-content ul,
+        .event-detail-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        .event-detail-content li {
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        .event-detail-content strong {
+            color: #0F6356;
+            font-weight: 600;
+        }
+        .event-detail-content em {
+            color: #555;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #0F6356;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        .back-button:hover {
+            color: #6BE188;
+        }
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #666;
+        }
+        .error {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #e74c3c;
+        }
+        @media (max-width: 768px) {
+            .event-detail-hero {
+                height: 300px;
+            }
+            .event-detail-info h1 {
+                font-size: 1.8rem;
+            }
+            .event-meta-detail {
+                font-size: 0.95rem;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex-between">
+            <a href="index.html" class="logo">
+                <img src="images/EduGarden_logo_transparent.png" alt="Edu-GArD3n Logo">
+            </a>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="#">About</a>
+                        <ul class="submenu">
+                            <li><a href="project.html">About the Project</a></li>
+                            <li><a href="partners.html">Project Partners</a></li>
+                            <li><a href="apply.html">Apply</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Member Area</a>
+                        <ul class="submenu">
+                            <li><a href="signup.html">Sign Up</a></li>
+                            <li><a href="login.html">Login</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Loading State -->
+    <div id="loading" class="loading">
+        <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: #6BE188;"></i>
+        <p style="margin-top: 1rem;">Loading event details...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="error" class="error" style="display: none;">
+        <i class="fas fa-exclamation-circle" style="font-size: 3rem;"></i>
+        <p style="margin-top: 1rem;">Event not found or could not be loaded.</p>
+        <a href="events.html" class="back-button" style="justify-content: center; margin-top: 2rem;">
+            <i class="fas fa-arrow-left"></i> Back to Events
+        </a>
+    </div>
+
+    <!-- Event Detail Content -->
+    <div id="eventDetail" style="display: none;">
+        <!-- Event Hero Section -->
+        <div class="event-detail-hero">
+            <img id="eventImage" src="" alt="">
+            <div class="event-detail-info">
+                <div class="container">
+                    <h1 id="eventTitle"></h1>
+                    <div class="event-meta-detail">
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="eventLocation"></span>
+                        </div>
+                        <div>
+                            <i class="fas fa-calendar-alt"></i>
+                            <span id="eventDate"></span>
+                        </div>
+                        <div>
+                            <i class="fas fa-clock"></i>
+                            <span id="eventTime"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Content -->
+        <div class="event-detail-content">
+            <a href="events.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Events
+            </a>
+            <div id="eventContent"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="instagram"><img src="images/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="linkedin"><img src="images/linkedin_white.png" alt="LinkedIn"></a>
+                </div>
+                <div class="funded">
+                    <!-- EU funding band with flag
+                    <div class="eu-band">
+                        <img src="images/GA_DISCLAIMER_white.png" alt="EU Flag" class="eu-flag">
+                        <p class="eu-text">Funded by the European Union</p>
+                    </div>
+                    <p class="disclaimer">The information and views set out in this web‑site are those of the authors and do not necessarily reflect the official opinion of the European Union. Neither the European Union institutions and bodies nor any person acting on their behalf may be held responsible for the use which may be made of the information contained therein.</p>
+                    <p class="grant">Grant agreement: <em>XXXXXXX</em></p>
+                    -->
+                    <div class="eu-band">
+                        <img src="images/GA_DISCLAIMER_white.png" alt="EU Flag" class="eu-flag">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Edu‑GArD3n | All Rights Reserved | Developed by: <a href="https://www.linkedin.com/in/martinelli-marco/" target="_blank" rel="noopener noreferrer" class="developer-link">Marco Martinelli</a></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Simple Markdown to HTML parser
+        function parseMarkdown(markdown) {
+            if (!markdown) return '';
+            
+            let html = markdown;
+            
+            // Headings
+            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+            
+            // Bold
+            html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
+            
+            // Italic
+            html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+            html = html.replace(/_(.+?)_/g, '<em>$1</em>');
+            
+            // Links
+            html = html.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
+            
+            // Convert to lines
+            const lines = html.split('\n');
+            const processed = [];
+            let inList = false;
+            let inOrderedList = false;
+            let paragraph = '';
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                
+                // Empty line
+                if (!line) {
+                    if (inList) {
+                        processed.push('</ul>');
+                        inList = false;
+                    }
+                    if (inOrderedList) {
+                        processed.push('</ol>');
+                        inOrderedList = false;
+                    }
+                    if (paragraph) {
+                        processed.push('<p>' + paragraph + '</p>');
+                        paragraph = '';
+                    }
+                    continue;
+                }
+                
+                // Headings (already converted)
+                if (line.startsWith('<h')) {
+                    if (inList) {
+                        processed.push('</ul>');
+                        inList = false;
+                    }
+                    if (inOrderedList) {
+                        processed.push('</ol>');
+                        inOrderedList = false;
+                    }
+                    if (paragraph) {
+                        processed.push('<p>' + paragraph + '</p>');
+                        paragraph = '';
+                    }
+                    processed.push(line);
+                    continue;
+                }
+                
+                // Unordered list
+                if (line.match(/^[-*+]\s+/)) {
+                    if (inOrderedList) {
+                        processed.push('</ol>');
+                        inOrderedList = false;
+                    }
+                    if (paragraph) {
+                        processed.push('<p>' + paragraph + '</p>');
+                        paragraph = '';
+                    }
+                    if (!inList) {
+                        processed.push('<ul>');
+                        inList = true;
+                    }
+                    processed.push('<li>' + line.replace(/^[-*+]\s+/, '') + '</li>');
+                    continue;
+                }
+                
+                // Ordered list
+                if (line.match(/^\d+\.\s+/)) {
+                    if (inList) {
+                        processed.push('</ul>');
+                        inList = false;
+                    }
+                    if (paragraph) {
+                        processed.push('<p>' + paragraph + '</p>');
+                        paragraph = '';
+                    }
+                    if (!inOrderedList) {
+                        processed.push('<ol>');
+                        inOrderedList = true;
+                    }
+                    processed.push('<li>' + line.replace(/^\d+\.\s+/, '') + '</li>');
+                    continue;
+                }
+                
+                // Regular paragraph
+                paragraph += (paragraph ? ' ' : '') + line;
+            }
+            
+            // Close any open tags
+            if (inList) processed.push('</ul>');
+            if (inOrderedList) processed.push('</ol>');
+            if (paragraph) processed.push('<p>' + paragraph + '</p>');
+            
+            return processed.join('\n');
+        }
+
+        // Get event slug from URL
+        function getEventSlug() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('event');
+        }
+
+        // Format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        }
+
+        // Load event data
+        async function loadEvent() {
+            const slug = getEventSlug();
+            
+            if (!slug) {
+                showError();
+                return;
+            }
+
+            try {
+                // Try to fetch the event JSON file
+                const response = await fetch(`events/${slug}.json`);
+                
+                if (!response.ok) {
+                    throw new Error('Event not found');
+                }
+
+                const event = await response.json();
+                
+                // Populate the page
+                document.getElementById('eventTitle').textContent = event.title;
+                document.getElementById('eventLocation').textContent = event.location;
+                document.getElementById('eventDate').textContent = formatDate(event.event_date);
+                document.getElementById('eventTime').textContent = event.event_time;
+                
+                // Handle image or gradient
+                const heroSection = document.querySelector('.event-detail-hero');
+                const eventImage = document.getElementById('eventImage');
+                
+                if (event.image_url && event.image_url.trim() !== '') {
+                    eventImage.src = event.image_url;
+                    eventImage.alt = event.title;
+                } else {
+                    heroSection.classList.add('hero-gradient');
+                }
+                
+                // Parse and insert Markdown content
+                const htmlContent = parseMarkdown(event.content_markdown);
+                document.getElementById('eventContent').innerHTML = htmlContent;
+                
+                // Update page title
+                document.title = event.title + ' - Edu-GArD3n';
+                
+                // Show the event detail
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('eventDetail').style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error loading event:', error);
+                showError();
+            }
+        }
+
+        function showError() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+        }
+
+        // Load event on page load
+        document.addEventListener('DOMContentLoaded', loadEvent);
+
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Close menu when clicking a regular link
+        const navLinks = document.querySelectorAll('.nav-menu a:not(.has-submenu > a)');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+            });
+        });
+
+        // Submenu toggling
+        const submenus = document.querySelectorAll('.has-submenu > a');
+        submenus.forEach(link => {
+            link.addEventListener('click', e => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const parentLi = link.parentElement;
+                    
+                    document.querySelectorAll('.has-submenu.open').forEach(item => {
+                        if (item !== parentLi) {
+                            item.classList.remove('open');
+                        }
+                    });
+                    
+                    parentLi.classList.toggle('open');
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

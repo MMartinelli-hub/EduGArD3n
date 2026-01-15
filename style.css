@@ -891,6 +891,103 @@ body {
     max-width: 1000px;
     line-height: 1.4;
 }
+
+/* EU Disclaimer Container */
+.eu-disclaimer-container {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    background-color: transparent;
+    padding: 15px 20px;
+    color: #333;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    min-height: 120px;
+    max-height: 120px;
+}
+
+.eu-disclaimer-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.disclaimer-text {
+    font-size: 0.68rem;
+    line-height: 1.18;
+    margin-bottom: 4px;
+    color: white;
+    text-align: justify;
+}
+
+.disclaimer-text:last-child {
+    margin-bottom: 0;
+}
+
+.grant-number {
+    font-size: 0.8rem;
+    margin: 0;
+    color: white;
+    text-align: left;
+}
+
+.grant-number strong {
+    font-weight: 600;
+}
+
+.eu-disclaimer-right {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.eu-funded-image {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Responsive EU Disclaimer */
+@media (max-width: 768px) {
+    .eu-disclaimer-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        min-height: auto;
+        max-height: none;
+    }
+    
+    .eu-disclaimer-left {
+        width: 100%;
+    }
+    
+    .disclaimer-text {
+        font-size: 0.75rem;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+    
+    .grant-number {
+        font-size: 0.8rem;
+    }
+    
+    .eu-disclaimer-right {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .eu-funded-image {
+        height: auto;
+        max-width: 250px;
+        width: 100%;
+    }
+}
+
+/* Legacy styles (can be removed if not used elsewhere) */
 .eu-band {
     display: flex;
     align-items: center;

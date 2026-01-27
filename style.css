@@ -1354,8 +1354,8 @@ body {
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(-10px);
-    min-width: 280px;
-    max-width: 320px;
+    min-width: 330px;
+    max-width: 390px;
     background: linear-gradient(135deg, #0F6356 0%, #6BE188 100%);
     color: #F5FFF3;
     padding: 1.25rem;
@@ -1398,8 +1398,9 @@ body {
     color: #F5FFF3;
 }
 .member-bio p {
-    font-size: 0.8rem;
-    line-height: 1.5;
+    font-size: 0.75rem;
+    line-height: 1.38;
+    font-weight: 500;
     margin: 0;
     color: rgba(245, 255, 243, 0.95);
 }

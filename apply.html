@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -218,21 +220,71 @@
             }
         });
 
+        // EmailJS Configuration
+        const EMAILJS_PUBLIC_KEY = 'n6PDuCYKB6BHes-lM';
+        const SERVICE_ID = 'service_edugarden';
+        const USER_CONFIRMATION_TEMPLATE_ID = 'template_9ifw0cp';
+        const ADMIN_NOTIFICATION_TEMPLATE_ID = 'template_nfqdo7h';
+
+        // Initialize EmailJS
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+
         // Form submission
         const form = document.getElementById('interestForm');
         const successMessage = document.getElementById('successMessage');
 
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // Here you would normally send the form data to a server
-            // For now, we'll just show the success message
-            
-            form.style.display = 'none';
-            successMessage.style.display = 'block';
-            
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Get form data
+            const formData = {
+                user_name: document.getElementById('name').value,
+                user_email: document.getElementById('email').value,
+                institution: document.getElementById('institution').value,
+                role: document.getElementById('role').value || 'Not specified',
+                interest: document.getElementById('interest').value || 'Not provided',
+                submission_date: new Date().toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                })
+            };
+
+            // Show loading state
+            const submitButton = form.querySelector('.btn-submit');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitButton.disabled = true;
+
+            try {
+                // Send confirmation email to user
+                await emailjs.send(SERVICE_ID, USER_CONFIRMATION_TEMPLATE_ID, {
+                    to_email: formData.user_email,
+                    to_name: formData.user_name,
+                    submission_date: formData.submission_date
+                });
+
+                // Send notification email to admin
+                await emailjs.send(SERVICE_ID, ADMIN_NOTIFICATION_TEMPLATE_ID, {
+                    user_name: formData.user_name,
+                    user_email: formData.user_email,
+                    institution: formData.institution,
+                    role: formData.role,
+                    interest: formData.interest,
+                    submission_date: formData.submission_date
+                });
+
+                // Show success message
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            } catch (error) {
+                console.error('Error sending emails:', error);
+                alert('Sorry, there was an error submitting your expression of interest. Please try again later or contact us directly.');
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+            }
         });
     </script>
 </body>

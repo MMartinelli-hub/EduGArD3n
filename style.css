@@ -2199,24 +2199,12 @@ body {
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-.news-image img[src^="news/images/"],
-.news-image img[src^="./news/images/"],
-.news-image img[src^="../news/images/"] {
-    object-fit: contain;
-    background: linear-gradient(135deg, rgba(15, 99, 86, 0.05) 0%, rgba(107, 225, 136, 0.05) 100%);
-    padding: 1rem;
-}
 .news-image-gradient {
     background: linear-gradient(135deg, #0F6356 0%, #6BE188 100%);
     position: relative;
 }
 .news-card:hover .news-image img {
     transform: scale(1.1);
-}
-.news-card:hover .news-image img[src^="news/images/"],
-.news-card:hover .news-image img[src^="./news/images/"],
-.news-card:hover .news-image img[src^="../news/images/"] {
-    transform: scale(1.05);
 }
 .news-date-badge {
     position: absolute;
